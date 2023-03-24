@@ -35,5 +35,6 @@ public class ControllerInicio{
 		
 		modelAndView.addObject("role", role);
 		return modelAndView;
+		
 	}
 }
