@@ -1,10 +1,5 @@
 package com.um.demo.ManagerImpl;
 
-import static org.mockito.ArgumentMatchers.isA;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.assertj.core.api.Assertions;
