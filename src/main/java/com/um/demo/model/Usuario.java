@@ -16,10 +16,11 @@ public class Usuario {
     public Usuario() {
     }
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
     private String email;
     private String password;
     private Boolean activo;  
+    private String role;
 }

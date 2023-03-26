@@ -17,8 +17,6 @@ import com.um.demo.Dao.UsuarioDao;
 
 @Controller
 public class ControllerInicio{
-	@Autowired
-	public UsuarioDao usuarioDao;
 	
 	@RequestMapping(value={"/inicio"}, method = RequestMethod.GET)
 	public ModelAndView inicio() {
@@ -26,7 +24,6 @@ public class ControllerInicio{
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		Collection<? extends GrantedAuthority> grantedAuthorities = auth.getAuthorities();
 		
-		//Usuario usuario = usuarioDao.buscaUsuarioporEmail(auth.getName());
 		String role 	= "";
 		
 		for (GrantedAuthority grantedAuthority : grantedAuthorities){
