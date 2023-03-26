@@ -10,6 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
 import com.um.demo.Dao.UsuarioDao;
+import com.um.demo.Manager.RoleManager;
 import com.um.demo.Manager.UsuarioManager;
 import com.um.demo.model.Usuario;
 
@@ -22,19 +23,21 @@ public class UsuarioManagerImplTest {
     @MockBean
     private UsuarioDao usuarioDao;
 
+    @MockBean
+    private RoleManager roleManager;
+
 
     @Test
     @Transactional
     void testGuardarUsuario() {
         Usuario usuario = new Usuario();
-        usuario.setId(1L);
         usuario.setNombre("carlos");
         usuario.setEmail("1@a.1");
         usuario.setPassword("123");
-        usuario.setActivo(true); 
-        usuarioDao.saveAndFlush(usuario);
+        usuarioDao.save(usuario);
 
         Mockito.when(usuarioDao.save(usuario)).thenReturn(usuario);
+        Mockito.when(roleManager.darRol()).thenReturn("-admin-"); 
         
         usuarioManager.guardarUsuario(usuario); 
 

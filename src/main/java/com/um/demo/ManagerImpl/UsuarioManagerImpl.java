@@ -22,7 +22,7 @@ public class UsuarioManagerImpl implements UsuarioManager{
         Usuario salida = new Usuario();
         salida.setActivo(true);
         salida.setRole(roleManager.darRol());
-        salida = usuarioDao.saveAndFlush(usuario);
+        salida = usuarioDao.save(usuario);
         return salida;
     }
 
