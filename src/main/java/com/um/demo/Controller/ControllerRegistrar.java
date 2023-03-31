@@ -6,11 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.um.demo.Dao.UsuarioDao;
 import com.um.demo.Manager.RoleManager;
 import com.um.demo.Manager.UsuarioManager;
 import com.um.demo.model.Usuario;
-
 
 @Controller
 public class ControllerRegistrar {

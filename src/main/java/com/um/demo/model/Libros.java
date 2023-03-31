@@ -20,4 +20,5 @@ public class Libros {
     private String precio;
     private int generoId;
     private String idioma;
+    private Byte img;
 }
