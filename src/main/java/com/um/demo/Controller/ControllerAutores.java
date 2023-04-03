@@ -59,15 +59,16 @@ public class ControllerAutores {
     @GetMapping("/autores/editar/{id}")
     public ModelAndView editar(@PathVariable("id") Long id){
         ModelAndView modelAndView = new ModelAndView();
-        Autor autorEdit = autorManager.buscarPorId(id);
-        modelAndView.addObject("autor", autorEdit);
+        Autor autor = autorManager.buscarPorId(id);
+        modelAndView.addObject("autor", autor);
         modelAndView.setViewName("Autores/Edit");
         return modelAndView;
     }
 
     @PostMapping("/autores/editar/{id}")
-    public ModelAndView editarAutor(Autor autor){
-        Autor salida = autorDao.getReferenceById(autor.getId());
+    public ModelAndView editarAutor(@PathVariable("id") Long id,  Autor autor){
+        Autor salida = autorDao.getReferenceById(id);
+        salida.setId(id);
         salida.setNombre(autor.getNombre());
         autorManager.guardarAutor(autor);
         return new ModelAndView("redirect:/autores") ;

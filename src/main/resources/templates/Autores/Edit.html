@@ -32,7 +32,7 @@
 					<div class="login-wrap p-0" >
 						<h3 class="mb-4 text-center">Editar Autor</h3>
 						<!-- Form -->
-						<form th:action="@{/autores/editar/{id}(autor=${id})}" th:object="${autor}" method="POST">
+						<form th:action="@{'/autores/editar/' + ${id}}" th:object="${autor}" method="POST">
 							<div class="form-group">
 								<input type="text" th:field="*{nombre}" name="nombre" class="form-control"
 									th:placeholder="#{autor.nombre}">
