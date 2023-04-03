@@ -10,7 +10,7 @@ import com.um.demo.Manager.AutorManager;
 import com.um.demo.model.Autor;
 
 @Service("AutorManager")
-public class AutoManagerImpl implements AutorManager {
+public class AutorManagerImpl implements AutorManager {
 
     @Autowired
     AutorDao autorDao;
